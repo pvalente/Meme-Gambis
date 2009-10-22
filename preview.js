@@ -11,12 +11,19 @@ postdiv.setAttribute("class", "post");
 
 var dash = document.createElement('div');
 dash.setAttribute("class", "dashboard");
+dash.setAttribute("style", "margin: 10px");
+
 dash.id = "content";
+
+var previewdiv = document.createElement('div');
+previewdiv.id = "preview";
 
 p.innerHTML = previewContent;
 textdiv.appendChild(p);
 postdiv.appendChild(textdiv);
 dash.appendChild(postdiv);
+previewdiv.appendChild(dash);
+
 
 var c = document.getElementById('add-1');
 
