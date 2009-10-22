@@ -1,5 +1,4 @@
-function mostraPreview(){
-    var previewContent = document.getElementById('input_text').value;
+function mostraPreview(previewContent){
 
     var p = document.createElement('p');
     if (previewContent.length < 400) {
@@ -37,7 +36,7 @@ function mostraPreview(){
 }
 $(document).ready(function () {
     $("#add-1").keydown(function(){
-        mostraPreview();
+        mostraPreview($('#input_text').val());
     });
 });
 
