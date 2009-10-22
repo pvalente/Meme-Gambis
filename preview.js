@@ -35,5 +35,9 @@ function mostraPreview(){
     var c = document.getElementById('add-1');
     c.appendChild(previewdiv);
 }
+$(document).ready(function () {
+    $("#add-1").keydown(function(){
+        mostraPreview();
+    });
+});
 
-mostraPreview();
