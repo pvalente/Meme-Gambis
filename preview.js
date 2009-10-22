@@ -24,8 +24,12 @@ postdiv.appendChild(textdiv);
 dash.appendChild(postdiv);
 previewdiv.appendChild(dash);
 
+pr = document.getElementById('preview');
+if (pr != null) {
+    pr.parentNode.removeChild(pr);
+}
 
 var c = document.getElementById('add-1');
 
-c.appendChild(dash);
+c.appendChild(previewdiv);
 
