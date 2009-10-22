@@ -13,7 +13,7 @@ function mostraPreview(previewContent){
 
     var dash = document.createElement('div');
     dash.setAttribute("class", "dashboard");
-    dash.setAttribute("style", "margin: 10px; width: 700px");
+    dash.setAttribute("style", "margin: 10px; width: 728px");
 
     dash.id = "content";
 
@@ -35,7 +35,8 @@ function mostraPreview(previewContent){
     c.appendChild(previewdiv);
 }
 $(document).ready(function () {
-    $("#add-1").keydown(function(){
+    $("#submit_text").val($("#submit_text").val() +" *preview on*");
+    $("#add-1").keyup(function(){
         mostraPreview($('#input_text').val());
     });
 });
