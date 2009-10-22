@@ -1,0 +1,1 @@
+javascript:(function(){var%20x%20=%20document.createElement('script');%20x.src%20=%20'http://github.com/pvalente/Meme-Gambis/raw/master/preview.js';%20document.getElementsByTagName('head')[0].appendChild(x);})();
