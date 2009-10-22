@@ -37,7 +37,7 @@ function mostraPreview(previewContent){
 $(document).ready(function () {
     $("#submit_text").val($("#submit_text").val() +" *preview on*");
     $("#add-1").keyup(function(){
-        mostraPreview($('#input_text').val());
+        mostraPreview($('#input_text').val().replace(/\n/g,'<br>'));
     });
 });
 
