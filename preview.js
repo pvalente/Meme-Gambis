@@ -11,7 +11,7 @@ postdiv.setAttribute("class", "post");
 
 var dash = document.createElement('div');
 dash.setAttribute("class", "dashboard");
-dash.setAttribute("style", "margin: 10px");
+dash.setAttribute("style", "margin: 10px; width: 600px");
 
 dash.id = "content";
 
