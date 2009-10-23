@@ -1,4 +1,4 @@
-function mostraPreview(previewContent){
+function mostraPreview(previewContent, type){
 
     var p = document.createElement('p');
     if (previewContent.length < 400) {
@@ -31,13 +31,27 @@ function mostraPreview(previewContent){
         pr.parentNode.removeChild(pr);
     }
 
-    var c = document.getElementById('add-1');
+    var c = document.getElementById('add-'+type);
     c.appendChild(previewdiv);
 }
 $(document).ready(function () {
     $("#submit_text").val($("#submit_text").val() +" *preview on*");
     $("#add-1").keyup(function(){
-        mostraPreview($('#input_text').val().replace(/\n/g,'<br>'));
+        //Text
+        mostraPreview($('#input_text').val().replace(/\n/g,'<br>'), '1');
     });
+    $("#add-2").keyup(function(){
+        //Photo
+        mostraPreview($('#input_text_photo').val().replace(/\n/g,'<br>'), '2');
+    });
+    $("#add-3").keyup(function(){
+        //Video
+        mostraPreview($('#input_text_video').val().replace(/\n/g,'<br>'), '3');
+    });
+    $("#add-4").keyup(function(){
+        //Audio
+        mostraPreview($('#input_text_music').val().replace(/\n/g,'<br>'), '4');
+    });
+    
 });
 
