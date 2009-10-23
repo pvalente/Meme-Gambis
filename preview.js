@@ -36,8 +36,14 @@ function mostraPreview(previewContent, type){
         //Video specific
         var v = $('#input_video').val();
         if (v.indexOf('youtube.com') > 0) {
-           $('#preview .text').prepend('<object width="425" height="344"><param name="movie" value="' + v + '"></param><param name="allowFullScreen" value="true"></param><param name="allowScriptAccess" value="always"></param><embed src="' + v + '" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="425" height="344"></embed></object>');
-           
+           $('#preview .text').prepend('<object width="560" height="344">\
+<param value="'+v+'" name="movie"/>\
+<param value="true" name="allowfullscreen"/>\
+<param value="opaque" name="wmode"/>\
+<param value="false" name="menu"/>\
+<param value="sameDomain" name="allowscriptaccess"/>\
+<embed width="560" height="344" wmode="opaque" allowfullscreen="true" menu="false" allowscriptaccess="always" type="application/x-shockwave-flash" src="'+v+'"/>\
+</object>');
         }
     }
 }
