@@ -19,6 +19,10 @@ function mostraPreview(previewContent, type){
 
     var previewdiv = document.createElement('div');
     previewdiv.id = "preview";
+    
+    if (type == '2' and $('input_photo_link').val()) {
+        previewContent = "<div class='image'><img src='"+$('input_photo_link').val()+"' class='image_expand big'></div>" + previewContent;
+    }
 
     p.innerHTML = previewContent;
     textdiv.appendChild(p);
@@ -34,6 +38,7 @@ function mostraPreview(previewContent, type){
     var c = document.getElementById('add-'+type);
     c.appendChild(previewdiv);
 }
+
 $(document).ready(function () {
     $("#submit_text").val($("#submit_text").val() +" *preview on*");
     $("#submit_photo").val($("#submit_photo").val() +" *preview on*");
