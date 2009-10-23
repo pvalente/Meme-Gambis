@@ -20,7 +20,7 @@ function mostraPreview(previewContent, type){
     var previewdiv = document.createElement('div');
     previewdiv.id = "preview";
     
-    if (type == '2' and $('input_photo_link').val()) {
+    if (type == '2' && $('input_photo_link').val() != null) {
         previewContent = "<div class='image'><img src='"+$('input_photo_link').val()+"' class='image_expand big'></div>" + previewContent;
     }
 
