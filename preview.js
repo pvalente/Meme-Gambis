@@ -36,9 +36,9 @@ function mostraPreview(previewContent, type){
         textdiv.appendChild(imgdiv);
     }
     var embed = null;
-    if (type == '3' && $('#input_video_link').val() != null) {
+    if (type == '3' && $('#input_video').val() != null) {
         //Video specific
-        var v = $('#input_video_link').val();
+        var v = $('#input_video').val();
         if (v.indexOf('youtube.com') > 0) {
             var embed = '<object width="425" height="344"><param name="movie" value="' + v + '"></param><param name="allowFullScreen" value="true"></param><param name="allowScriptAccess" value="always"></param><embed src="' + v + '" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="425" height="344"></embed></object>';
            
