@@ -36,6 +36,9 @@ function mostraPreview(previewContent, type){
 }
 $(document).ready(function () {
     $("#submit_text").val($("#submit_text").val() +" *preview on*");
+    $("#submit_photo").val($("#submit_photo").val() +" *preview on*");
+    $("#submit_video").val($("#submit_video").val() +" *preview on*");
+    $("#submit_music").val($("#submit_music").val() +" *preview on*");
     $("#add-1").keyup(function(){
         //Text
         mostraPreview($('#input_text').val().replace(/\n/g,'<br>'), '1');
