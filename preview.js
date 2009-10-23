@@ -1,6 +1,6 @@
 function mostraPreview(previewContent, type){
     
-    pr = $('#preview');
+    pr = document.getElementById('preview');
     if (pr != null) {
         pr.parentNode.removeChild(pr);
     }
