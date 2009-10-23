@@ -22,12 +22,12 @@ function mostraPreview(previewContent, type){
     
     p.innerHTML = previewContent;
     
-    if (type == '2' && $('input_photo_link').val() != null) {
+    if (type == '2' && $('#input_photo_link').val() != null) {
         var imgdiv = document.createElement('div');
         imgdiv.setAttribute("class", "image");
         
         var img = document.createElement('img');
-        img.src = $('input_photo_link').val();
+        img.src = $('#input_photo_link').val();
         img.setAttribute("class", "image_expand big");
         
         imgdiv.appendChild(img);
