@@ -1,7 +1,7 @@
 function mostraPreview(previewContent, type){
 
     var p = document.createElement('p');
-    if (previewContent.length < 400) {
+    if (previewContent.length < 400 && type == '1') {
         p.setAttribute("class", "big");
     }
 
@@ -13,7 +13,7 @@ function mostraPreview(previewContent, type){
 
     var dash = document.createElement('div');
     dash.setAttribute("class", "dashboard");
-    dash.setAttribute("style", "margin: 10px; width: 728px");
+    dash.setAttribute("style", "margin: 20px; width: 748px");
 
     dash.id = "content";
 
