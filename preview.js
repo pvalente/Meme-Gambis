@@ -20,11 +20,21 @@ function mostraPreview(previewContent, type){
     var previewdiv = document.createElement('div');
     previewdiv.id = "preview";
     
+    p.innerHTML = previewContent;
+    
     if (type == '2' && $('input_photo_link').val() != null) {
-        previewContent = "<div class='image'><img src='"+$('input_photo_link').val()+"' class='image_expand big'></div>" + previewContent;
+        var imgdiv = document.createElement('div');
+        imgdiv.setAttribute("class", "image");
+        
+        var img = document.createElement('img');
+        img.src = $('input_photo_link').val();
+        img.setAttribute("class", "image_expand big");
+        
+        imgdiv.appendChild(img);
+        textdiv.appendChild(imgdiv);
     }
 
-    p.innerHTML = previewContent;
+    
     textdiv.appendChild(p);
     postdiv.appendChild(textdiv);
     dash.appendChild(postdiv);
