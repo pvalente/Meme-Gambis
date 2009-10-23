@@ -25,6 +25,7 @@ function mostraPreview(previewContent, type){
     if (type == '2' && $('#input_photo_link').val() != null) {
         var imgdiv = document.createElement('div');
         imgdiv.setAttribute("class", "image");
+        imgdiv.setAttribute("width", "500px");
         
         var img = document.createElement('img');
         img.src = $('#input_photo_link').val();
