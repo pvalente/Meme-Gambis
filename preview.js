@@ -1,41 +1,37 @@
 function mostraPreview(previewContent, type){
-
-    var p = document.createElement('p');
-    if (previewContent.length < 400 && type == '1') {
-        p.setAttribute("class", "big");
-    }
-
-    var textdiv = document.createElement('div');
-    textdiv.setAttribute("class", "text");
-
-    var postdiv = document.createElement('div');
-    postdiv.setAttribute("class", "post");
-
-    var dash = document.createElement('div');
-    dash.setAttribute("class", "dashboard");
-    dash.setAttribute("style", "margin: 20px; width: 748px");
-
-    dash.id = "content";
-
-    var previewdiv = document.createElement('div');
-    previewdiv.id = "preview";
     
-    p.innerHTML = previewContent;
+    pr = $('#preview');
+    if (pr != null) {
+        pr.parentNode.removeChild(pr);
+    }
+    
+    var base = '<div id="preview">\
+        <div id="content" class="dashboard" style="margin: 20px; width: 748px;">\
+            <div class="post">\
+                <div class="text">\
+                    <p>'+previewContent+'</p>\
+                </div>\
+            </div>\
+        </div>\
+    </div>';
+
+    $('#add-'+type).append(base);
+    
+    if (previewContent.length < 400 && type == '1') {
+        $('#preview .text p').addClass("big");
+    }
+    
+    
     
     if (type == '2' && $('#input_photo_link').val() != null) {
         //Photo specific
-        var imgdiv = document.createElement('div');
-        imgdiv.setAttribute("class", "image");
-        imgdiv.setAttribute("style", "float:left; clear:both; line-height: 0px");
-        
-        var img = document.createElement('img');
-        img.src = $('#input_photo_link').val();
-        img.setAttribute("class", "image_expand big");
-        
-        imgdiv.appendChild(img);
-        textdiv.appendChild(imgdiv);
+        var img = '<div class="image" style="float: left; line-height: 0px;">\
+                    <img class="image_expand big" src="'+ $('#input_photo_link').val() +'"/>\
+                    </div>\
+                    <div style="clear:both"></div>';
+        $('#preview .text').prepend(img); 
     }
-    var embed = null;
+    
     if (type == '3' && $('#input_video').val() != null) {
         //Video specific
         var v = $('#input_video').val();
@@ -43,22 +39,6 @@ function mostraPreview(previewContent, type){
             var embed = '<object width="425" height="344"><param name="movie" value="' + v + '"></param><param name="allowFullScreen" value="true"></param><param name="allowScriptAccess" value="always"></param><embed src="' + v + '" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="425" height="344"></embed></object>';
            
         }
-    }
-    
-    textdiv.appendChild(p);
-    postdiv.appendChild(textdiv);
-    dash.appendChild(postdiv);
-    previewdiv.appendChild(dash);
-
-    pr = document.getElementById('preview');
-    if (pr != null) {
-        pr.parentNode.removeChild(pr);
-    }
-
-    var c = document.getElementById('add-'+type);
-    c.appendChild(previewdiv);
-    if (embed != null) {
-         $('#preview .text').prepend(embed);
     }
 }
 
